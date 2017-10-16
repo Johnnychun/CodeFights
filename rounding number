@@ -1,0 +1,11 @@
+function rounders(n) {
+  var p = 10; //It is because the rounding to integer is starting from the ten digit
+  while (n > p) {
+    if (Math.floor((n % p) / Math.floor(p / 10)) < 5) // If the digit is let then 5 which mean it don't need to round up
+      n = Math.floor(n / p) * p;
+    else
+      n = (Math.floor(n / p) + 1) * p; // If the digit is greater than 5 which mwan it need to round up.
+    p *= 10; //It going to round a higher digits
+  }
+  return n;
+}
